@@ -131,10 +131,14 @@ export default {
       menuData: [
         {
           id: 1,
-          menuName: '基因分析',
+          menuName: '贴现管理',
           ico: 'el-icon-s-data',
-          path: '/Data',
-          children: [{ id: 11, menuName: '基因分析', path: '/Data' }]
+          path: '/discount',
+          children: [
+            { id: 11, menuName: '贴现管理', path: '/discount' },
+            { id: 12, menuName: '承兑银行管理', path: '/acceptanceBank' },
+            { id: 13, menuName: '承兑财务公司', path: '/financeCompany' },
+            { id: 14, menuName: '分级会员', path: '/member' }]
         },
         {
           id: 2,
@@ -152,11 +156,6 @@ export default {
           ico: 'el-icon-s-order',
           path: '/Test',
           children: [{ id: 31, menuName: '测序分析', path: '/Test' }]
-        }, {
-          id: 4,
-          menuName: '历史报告',
-          ico: 'el-icon-s-order',
-          path: '/Reports'
         }
       ],
       activePath: ''
@@ -194,6 +193,11 @@ export default {
 }
 </script>
 <style lang="less" scoped>
+.el-submenu .el-menu-item{
+  min-width: auto;
+  padding: 0;
+  padding-left: 50px!important;
+}
 .main {
   height: 100%;
 }
@@ -305,9 +309,10 @@ export default {
 }
 .el-main {
   color: #333;
-  background-color: #eee;
+  // background-color: #ccc;
   margin-left: 5px;
-  padding: 60px 20px 10px;
+  // padding: 60px 20px 10px;
+  padding: 0;
   position: relative;
 
   .el-breadcrumb {
