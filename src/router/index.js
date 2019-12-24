@@ -12,17 +12,33 @@ const Member = () => import('../components/discount/member.vue')// 会员
 Vue.use(VueRouter)
 
 const routes = [
-  { path: '/', redirect: '/Login' }, // 重定向至登录
+  { path: '/', redirect: '/Home' }, // 重定向至首页
   { path: '/Login', component: Login }, // 登录
   { path: '/Home',
     component: Home,
     redirect: '/Welcome',
     children: [
-      { path: '/Welcome', component: Welcome },
-      { path: '/discount', component: Discount },
-      { path: '/acceptanceBank', component: AcceptanceBank },
-      { path: '/financeCompany', component: FinanceCompany },
-      { path: '/member', component: Member }]
+      { path: '/Welcome',
+        component: Welcome,
+        name: 'Welcome',
+        meta: { title: 'Welcome' } },
+      { path: '/discount',
+        component: Discount,
+        name: 'Discount',
+        meta: { title: '贴现管理' } },
+      { path: '/acceptanceBank',
+        component: AcceptanceBank,
+        name: 'AcceptanceBank',
+        meta: { title: '承兑银行管理' } },
+      { path: '/financeCompany',
+        component: FinanceCompany,
+        name: 'FinanceCompany',
+        meta: { title: '承兑财务公司' } },
+      { path: '/member',
+        component: Member,
+        name: 'Member',
+        meta: { title: '分级会员' } }
+    ]
   }
 ]
 

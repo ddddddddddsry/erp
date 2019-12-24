@@ -21,7 +21,10 @@ import {
   Breadcrumb,
   BreadcrumbItem,
   RadioGroup,
-  RadioButton
+  RadioButton,
+  DropdownMenu,
+  DropdownItem,
+  Dropdown
 } from 'element-ui'
 
 Vue.use(Button)
@@ -45,5 +48,8 @@ Vue.use(Breadcrumb)
 Vue.use(BreadcrumbItem)
 Vue.use(RadioGroup)
 Vue.use(RadioButton)
+Vue.use(DropdownMenu)
+Vue.use(DropdownItem)
+Vue.use(Dropdown)
 
 Vue.prototype.$message = Message
