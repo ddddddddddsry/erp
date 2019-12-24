@@ -70,11 +70,15 @@ table {
 /* 使用伪元素清除浮动 */
 .clearfix::before,
 .clearfix::after {
-  display: table;
   content: "";
-}
-.clearfix::after {
+  height: 0;
+  line-height: 0;
+  display: block;
+  visibility: none;
   clear: both;
+}
+.clearfix {
+  *zoom: 1;
 }
 .ellipsis-1 {
   display: -webkit-box;

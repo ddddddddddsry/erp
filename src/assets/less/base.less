@@ -76,15 +76,18 @@ table {
 }
 
 /* 使用伪元素清除浮动 */
-
 .clearfix::before,
 .clearfix::after {
-  display: table;
-  content: "";
+    content: "";
+    height: 0;
+    line-height: 0;
+    display: block;
+    visibility: none;
+    clear: both;
 }
 
-.clearfix::after {
-  clear: both;
+.clearfix {
+    *zoom: 1;
 }
 
 // 多行溢出
