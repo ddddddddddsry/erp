@@ -60,7 +60,7 @@
               >
             </div>
             <div class="info">
-              <p class="name">个人中心
+              <p class="name">宋茹怡
                 <el-tooltip
                   class="item"
                   effect="dark"
@@ -107,9 +107,7 @@
         </el-menu>
       </el-aside>
       <el-main>
-        <div class="content">
           <router-view></router-view>
-        </div>
       </el-main>
     </el-container>
   </el-container>
@@ -142,11 +140,11 @@ export default {
         },
         {
           id: 2,
-          menuName: '序列比对',
+          menuName: '利率报价器',
           path: '/Order',
           ico: 'el-icon-s-marketing',
           children: [
-            { id: 21, menuName: '序列比对', path: '/Order' }
+            { id: 21, menuName: '利率报价器', path: '/Calculator' }
             // { id: 22, menuName: '序列分析', path: '/Analyse' }
           ]
         },
@@ -320,12 +318,6 @@ export default {
     line-height: 60px;
     position: absolute;
     top: 0;
-  }
-  .content {
-    background-color: #fff;
-    box-sizing: border-box;
-    padding: 10px;
-    height: 100%;
   }
 }
 </style>

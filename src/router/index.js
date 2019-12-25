@@ -7,8 +7,12 @@ const Register = () =>
     import(/* webpackChunkName:'Login' */ '../components/login/Register.vue') // 注册页面
 const ResetPasswd = () =>
     import(/* webpackChunkName:'Login' */ '../components/login/ResetPasswd.vue') // 找回密码页面
+// 首页
 const Home = () => import('../components/Home.vue') // 首页页面
 const Welcome = () => import('../components/Welcome.vue')// 欢迎页面
+// 利率报价器
+const Calculator = () => import('../components/Calculator.vue') // 利率报价器页
+// 贴现管理页面及其子页面
 const Discount = () => import('../components/discount/discount.vue')// 贴现管理页面
 const AcceptanceBank = () => import('../components/discount/acceptanceBank.vue')// 承兑银行页面
 const FinanceCompany = () => import('../components/discount/financeCompany.vue')// 财务公司
@@ -29,7 +33,9 @@ const routes = [
       { path: '/discount', component: Discount },
       { path: '/acceptanceBank', component: AcceptanceBank },
       { path: '/financeCompany', component: FinanceCompany },
-      { path: '/member', component: Member }]
+      { path: '/member', component: Member },
+      { path: '/Calculator', component: Calculator } // 利率报价器
+    ]
   }
 ]
 

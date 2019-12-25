@@ -26,7 +26,10 @@ import {
   Steps,
   Step,
   Progress,
-  Radio
+  Radio,
+  Select,
+  Option,
+  DatePicker
 } from 'element-ui'
 
 Vue.use(Button)
@@ -55,5 +58,8 @@ Vue.use(Steps)
 Vue.use(Step)
 Vue.use(Progress)
 Vue.use(Radio)
+Vue.use(Select)
+Vue.use(Option)
+Vue.use(DatePicker)
 
 Vue.prototype.$message = Message
