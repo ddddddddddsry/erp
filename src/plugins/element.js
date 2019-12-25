@@ -32,7 +32,9 @@ import {
   Radio,
   Select,
   Option,
-  DatePicker
+  DatePicker,
+  Table,
+  TableColumn
 } from 'element-ui'
 
 Vue.use(Button)
@@ -67,5 +69,7 @@ Vue.use(Radio)
 Vue.use(Select)
 Vue.use(Option)
 Vue.use(DatePicker)
+Vue.use(Table)
+Vue.use(TableColumn)
 
 Vue.prototype.$message = Message
