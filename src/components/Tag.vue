@@ -112,14 +112,16 @@ export default {
   font-size: 14px;
   padding: 2px 6px 4px 4px;
   border-radius: 3px;
-  background-color: #10b9d3;
+  background-color: #10b9d3;  background-color: rgb(99, 143, 192);
+
   color: #fff;
   .el-button--mini,
   .el-button--mini.is-round {
     padding: 0;
   }
   .el-button {
-    background-color: #10b9d3;
+    background-color: #10b9d3;  background-color: rgb(99, 143, 192);
+
     border: none;
     color: #fff;
     padding-right: 3px;
@@ -138,7 +140,7 @@ a {
   height: 38px;
   overflow: hidden;
   background: transparent;
-  padding-right: 45px;
+  padding-right: 85px;
   padding-left: 34px;
   margin-bottom: 10px;
 }
@@ -184,7 +186,9 @@ a {
 .tags-li.active {
   color: #fff;
   border: 1px solid #10b9d3;
+  border: 1px solid rgb(99, 143, 192);
   background-color: #10b9d3;
+  background-color: rgb(99, 143, 192);
 }
 
 .tags-li.active .tags-li-title {

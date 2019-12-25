@@ -1,5 +1,5 @@
 <template>
-  <div class="banklist">
+  <div class="banklist p20">
     <div class="list_up">
       <span>承兑行名称</span
       ><input placeholder="请输入承兑行名称" class="query" type="text" />
@@ -68,49 +68,7 @@ export default {
   methods: {}
 }
 </script>
-<style lang="less">
-.list_up {
-  .el-input__inner {
-    height: 32px;
-    line-height: 32px;
-  }
-  .el-input__icon {
-    line-height: 32px;
-  }
-  .btn {
-    margin-left: 10px;
-  }
-}
-</style>
+
 <style lang="less" scoped>
-.banklist {
-  color: #333;
-  padding: 10px;
-}
-.list_up {
-  .query {
-    border: 1px solid#DCDFE6;
-    height: 30px;
-    vertical-align: middle;
-    margin: 0 10px;
-    padding: 0 10px;
-    border-radius: 3px;
-  }
-  .el-select {
-    vertical-align: middle;
-    margin-left: 10px;
-  }
-}
-input::-webkit-input-placeholder {
-  color: #c0c4cc;
-}
-input:-moz-placeholder {
-  color: #c0c4cc;
-}
-input::-moz-placeholder {
-  color: #c0c4cc;
-}
-input:-ms-input-placeholder {
-  color: #c0c4cc;
-}
+
 </style>

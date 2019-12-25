@@ -179,7 +179,7 @@ export default {
 .footernews {
   background-color: rgb(240, 240, 240);
   height: 70px;
-  margin-left: 5px;
+  margin-left: 6px;
 }
 .calBox .title {
   background-color: rgb(20, 37, 55);
@@ -279,6 +279,7 @@ export default {
   ul {
     li {
       height: 40px;
+      font-size: 16px;
       span {
         margin-right: 25px;
       }
@@ -291,6 +292,7 @@ export default {
     line-height: 35px;
     font-weight: 700;
     color: #10569b;
+    font-size: 16px;
   }
 }
 .right {
