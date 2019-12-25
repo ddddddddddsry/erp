@@ -164,7 +164,6 @@ export default {
 </style>
 <style lang="less" scoped>
 .calculator {
-  height: 100%;
   color: #fff;
   min-width: 1180px;
 }
@@ -180,6 +179,7 @@ export default {
 .footernews {
   background-color: rgb(240, 240, 240);
   height: 70px;
+  margin-left: 5px;
 }
 .calBox .title {
   background-color: rgb(20, 37, 55);
@@ -290,7 +290,7 @@ export default {
     height: 35px;
     line-height: 35px;
     font-weight: 700;
-    color: #0069d3;
+    color: #10569b;
   }
 }
 .right {

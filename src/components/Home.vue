@@ -1,116 +1,110 @@
 <template>
   <el-container class="main">
-    <el-header>
-      <div class="header">
-        <img
-          src="../assets/imgs/logo2.png"
-          alt=""
-        >
-        <span>ERP管理系统</span>
-      </div>
-      <el-tooltip
-        class="item"
-        effect="dark"
-        content="退出登录"
-        placement="bottom"
+    <!-- 侧边栏 -->
+    <el-aside width="auto">
+      <el-menu
+        router
+        unique-opened
+        :collapse="isCollapse"
+        :default-active="activePath"
+        :collapse-transition="transition"
+        class="el-menu-vertical-demo"
       >
-        <el-button
-          @click="outLogin"
-          class="el-icon-switch-button outlogin"
-        >
-        </el-button>
-      </el-tooltip>
 
-    </el-header>
-    <el-container>
-      <!-- 侧边栏 -->
-      <el-aside width="auto">
-        <el-menu
-          router
-          unique-opened
-          :collapse="isCollapse"
-          :default-active="activePath"
-          :collapse-transition="transition"
-          class="el-menu-vertical-demo"
+        <!-- 个人信息部分 -->
+        <div
+          class="memberInfo"
+          v-show="!isCollapse"
         >
-          <!-- 控制侧边栏的伸缩按钮 -->
-          <div
-            @click="toggle"
-            class="reduce"
-          >
-            <i
-              v-show="!isCollapse"
-              class="el-icon-d-arrow-left"
-            ></i>
-            <i
-              v-show="isCollapse"
-              class="el-icon-d-arrow-right"
-            ></i>
+          <div class="avatar">
+            <img
+              src="../assets/imgs/avatar.jpg"
+              alt=""
+            >
           </div>
-
-          <!-- 个人信息部分 -->
-          <div
-            class="memberInfo"
-            v-show="!isCollapse"
-          >
-            <div class="avatar">
-              <img
-                src="../assets/imgs/avatar.jpg"
-                alt=""
+          <div class="info">
+            <p class="name">宋茹怡
+              <el-tooltip
+                class="item"
+                effect="dark"
+                content="个人中心"
+                placement="bottom"
               >
-            </div>
-            <div class="info">
-              <p class="name">宋茹怡
-                <el-tooltip
-                  class="item"
-                  effect="dark"
-                  content="个人中心"
-                  placement="bottom"
+                <span
+                  @click="goPersonCenter"
+                  class="el-icon-caret-bottom"
                 >
-                  <span
-                    @click="goPersonCenter"
-                    class="el-icon-caret-bottom"
-                  >
-                  </span>
-                </el-tooltip>
-              </p>
-              <!-- <p class="place ellipsis-1">奉贤区第一人民医院</p> -->
-            </div>
+                </span>
+              </el-tooltip>
+            </p>
+            <!-- <p class="place ellipsis-1">奉贤区第一人民医院</p> -->
           </div>
-          <div
-            class="blank"
+        </div>
+        <div
+          class="blank"
+          v-show="isCollapse"
+        >
+          <div class="avatar">
+            <img
+              src="../assets/imgs/avatar.jpg"
+              alt=""
+            >
+          </div>
+        </div>
+        <el-submenu
+          :index="item.id+''"
+          v-for="item in menuData"
+          :key="item.id"
+        >
+          <template slot="title">
+            <i :class="item.ico"></i>
+            <span>{{item.menuName}}</span>
+          </template>
+          <el-menu-item
+            @click="toPath(citem.path)"
+            v-for="citem in item.children"
+            :key="citem.id"
+            :index="citem.path"
+          >{{citem.menuName}}</el-menu-item>
+        </el-submenu>
+      </el-menu>
+    </el-aside>
+    <el-container>
+      <el-header height="40px">
+
+        <!-- 控制侧边栏的伸缩按钮 -->
+        <div
+          @click="toggle"
+          class="reduce"
+        >
+          <i
+            v-show="!isCollapse"
+            class="el-icon-d-arrow-left"
+          ></i>
+          <i
             v-show="isCollapse"
+            class="el-icon-d-arrow-right"
+          ></i>
+        </div>
+        <!-- 导航tag标签 -->
+        <TagsView></TagsView>
+        <!-- 退出登录 -->
+        <el-tooltip
+          class="item"
+          effect="dark"
+          content="退出登录"
+          placement="bottom"
+        >
+          <el-button
+            @click="outLogin"
+            class="el-icon-switch-button outlogin"
           >
-            <div class="avatar">
-              <img
-                src="../assets/imgs/avatar.jpg"
-                alt=""
-              >
-            </div>
-          </div>
-          <el-submenu
-            :index="item.id+''"
-            v-for="item in menuData"
-            :key="item.id"
-          >
-            <template slot="title">
-              <i :class="item.ico"></i>
-              <span>{{item.menuName}}</span>
-            </template>
-            <el-menu-item
-              @click="toPath(citem.path)"
-              v-for="citem in item.children"
-              :key="citem.id"
-              :index="citem.path"
-            >{{citem.menuName}}</el-menu-item>
-          </el-submenu>
-        </el-menu>
-      </el-aside>
+          </el-button>
+        </el-tooltip>
+      </el-header>
       <el-main>
         <div class="content">
-          <TagsView></TagsView>
           <router-view></router-view>
-
         </div>
       </el-main>
     </el-container>
@@ -204,64 +198,68 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-.el-submenu .el-menu-item{
+.el-submenu .el-menu-item {
   min-width: auto;
   padding: 0;
-  padding-left: 50px!important;
+  padding-left: 50px !important;
 }
 .main {
   height: 100%;
 }
-.outlogin {
-  background-color: transparent;
-  color: #fff;
-  border: none;
-}
 .el-header {
-  background-color: #569be0;
   color: #fff;
-  padding: 0px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  .header {
-    font-size: 18px;
-    display: flex;
-    align-items: center;
+  padding: 0px;
+  // background: rgb(175, 224, 219);
+  background: linear-gradient(to right, rgb(134, 207, 200),rgb(175, 224, 219), rgb(134, 207, 200));
+  position: relative;
+  // display: flex;
+  // align-items: center;
+  // justify-content: space-between;
+  // .header {
+  //   font-size: 18px;
+  //   display: flex;
+  //   align-items: center;
 
-    img {
-      height: 35px;
-      margin-right: 20px;
-    }
-  }
+  //   img {
+  //     height: 35px;
+  //     margin-right: 20px;
+  //   }
+  // }
 }
 .el-aside {
   color: #333;
   height: 100%;
-  background-color: pink;
-  box-shadow: 0px 0px 10px #999;
   .el-menu {
     height: 100%;
   }
 }
 .reduce {
   position: absolute;
-  right: 0;
-  top: 0;
+  left: 0px;
+  top: 7px;
   z-index: 999;
-  background-color: rgba(1, 116, 151, 0.5);
   font-weight: 400;
-  font-size: 18px;
-  padding: 0 23px;
+  font-size: 12px;
+  padding: 4px 9px 5px 7px;
+  border-radius: 3px;
+  background-color: #10B9D3;
   color: #fff;
   cursor: pointer;
-  transition: all .5s;
-  &:hover {
-  background-color: rgba(1, 116, 151, 0.8);
-  }
+}
+
+.outlogin {
+  background-color: #10B9D3;
+  color: #fff;
+  border: none;
+  position: absolute;
+  right: 7px;
+  font-size: 12px;
+  padding: 7px 9px 6px 9px;
+  top: 7px;
+
 }
 .blank {
-  height: 110px;
+  height: 150px;
   width: 64px;
   align-items: center;
   justify-content: center;
@@ -276,14 +274,13 @@ export default {
     border: 2px solid #fff;
     border-radius: 50%;
     overflow: hidden;
-    margin-top: 20px;
     img {
       width: 100%;
     }
   }
 }
 .memberInfo {
-  height: 110px;
+  height: 150px;
   display: flex;
   padding: 15px;
   box-sizing: border-box;
@@ -320,11 +317,9 @@ export default {
 }
 .el-main {
   color: #333;
-  // background-color: #ccc;
-  margin-left: 5px;
-  // padding: 60px 20px 10px;
   padding: 0;
   position: relative;
+  background:linear-gradient(to right, #ddd 0px, #eee 4px,#fff 10px);
 
   .el-breadcrumb {
     height: 60px;
@@ -332,5 +327,6 @@ export default {
     position: absolute;
     top: 0;
   }
+
 }
 </style>

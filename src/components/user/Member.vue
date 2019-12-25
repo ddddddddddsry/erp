@@ -1,7 +1,6 @@
 <template>
-    <div>
-
-   member
+    <div class="member w">
+2432
     </div>
   </template>
 
@@ -18,5 +17,7 @@ export default {
 }
 </script>
   <style lang="less" scoped>
-
+  .member {
+    // background-color: pink;
+  }
   </style>
