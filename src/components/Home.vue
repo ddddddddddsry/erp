@@ -145,8 +145,9 @@ export default {
           children: [
             { id: 11, menuName: '贴现管理', path: '/discount' },
             { id: 12, menuName: '承兑银行管理', path: '/acceptanceBank' },
-            { id: 13, menuName: '承兑财务公司', path: '/financeCompany' },
-            { id: 14, menuName: '分级会员', path: '/member' }]
+            { id: 13, menuName: '承兑财务公司', path: '/financeCompany' }
+            // { id: 14, menuName: '分级会员', path: '/member' }
+          ]
         },
         {
           id: 2,
@@ -160,10 +161,12 @@ export default {
         },
         {
           id: 3,
-          menuName: '测序分析',
+          menuName: '成员管理',
           ico: 'el-icon-s-order',
-          path: '/Test',
-          children: [{ id: 31, menuName: '测序分析', path: '/Test' }]
+          path: '/Member',
+          children: [{ id: 31, menuName: '贴现用户列表', path: '/Member' },
+            { id: 32, menuName: '营销用户列表', path: '/UserList' },
+            { id: 33, menuName: '我的下属会员', path: '/Under' }]
         }
       ],
       activePath: ''
