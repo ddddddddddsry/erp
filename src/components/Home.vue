@@ -107,19 +107,29 @@
         </el-menu>
       </el-aside>
       <el-main>
+        <div class="content">
+          <TagsView></TagsView>
           <router-view></router-view>
+
+        </div>
       </el-main>
     </el-container>
   </el-container>
 </template>
 <script>
+import TagsView from './Tag.vue'
 export default {
+
   created () {
     if (this.$route.path === '/Welcome') {
       this.activePath = ''
     } else {
       this.activePath = window.sessionStorage.getItem('path')
     }
+  },
+  components: {
+
+    TagsView
   },
   data () {
     return {

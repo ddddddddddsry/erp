@@ -234,7 +234,6 @@ export default {
         color: #000;
         position: absolute;
         right: 15px;
-        z-index: 99999;
       }
     }
     .el-button {

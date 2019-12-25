@@ -2,7 +2,7 @@
   <div class="loginBox">
     <div class="login">
       <div class="leftpart">
-        <h3>金融服务系统</h3>
+        <h3>和同金融服务系统</h3>
         <p>欢迎使用 和同金融服务系统 选择项目后直接登录</p>
         <ul class="nav">
           <li><a @click="changeCurrent('贴现管理系统')" :class="{current: current === '贴现管理系统'}">贴现管理系统</a></li>

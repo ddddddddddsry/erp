@@ -22,6 +22,9 @@ import {
   BreadcrumbItem,
   RadioGroup,
   RadioButton,
+  DropdownMenu,
+  DropdownItem,
+  Dropdown,
   Upload,
   Steps,
   Step,
@@ -53,6 +56,9 @@ Vue.use(Breadcrumb)
 Vue.use(BreadcrumbItem)
 Vue.use(RadioGroup)
 Vue.use(RadioButton)
+Vue.use(DropdownMenu)
+Vue.use(DropdownItem)
+Vue.use(Dropdown)
 Vue.use(Upload)
 Vue.use(Steps)
 Vue.use(Step)
