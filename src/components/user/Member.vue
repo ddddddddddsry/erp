@@ -1,7 +1,7 @@
 <template>
     <div>
 
-   人员
+   member
     </div>
   </template>
 

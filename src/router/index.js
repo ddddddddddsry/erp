@@ -16,7 +16,9 @@ const Calculator = () => import('../components/Calculator.vue') // 利率报价�
 const Discount = () => import('../components/discount/discount.vue')// 贴现管理页面
 const AcceptanceBank = () => import('../components/discount/acceptanceBank.vue')// 承兑银行页面
 const FinanceCompany = () => import('../components/discount/financeCompany.vue')// 财务公司
-const Member = () => import('../components/discount/member.vue')// 会员
+const Member = () => import('../components/user/Member.vue')
+const UserList = () => import('../components/user/UserList.vue')
+const Under = () => import('../components/user/Under.vue')
 
 Vue.use(VueRouter)
 
@@ -49,10 +51,18 @@ const routes = [
         component: FinanceCompany,
         name: 'FinanceCompany',
         meta: { title: '承兑财务公司' } },
-      { path: '/member',
+      { path: '/Member',
         component: Member,
         name: 'Member',
-        meta: { title: '分级会员' } }
+        meta: { title: '贴现用户列表' } },
+      { path: '/UserList',
+        component: UserList,
+        name: 'UserList',
+        meta: { title: '营销用户列表' } },
+      { path: '/Under',
+        component: Under,
+        name: 'Under',
+        meta: { title: '我的下属会员' } }
     ]
   }
 ]
