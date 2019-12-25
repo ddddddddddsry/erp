@@ -24,7 +24,12 @@ import {
   RadioButton,
   DropdownMenu,
   DropdownItem,
-  Dropdown
+  Dropdown,
+  Upload,
+  Steps,
+  Step,
+  Progress,
+  Radio
 } from 'element-ui'
 
 Vue.use(Button)
@@ -51,5 +56,10 @@ Vue.use(RadioButton)
 Vue.use(DropdownMenu)
 Vue.use(DropdownItem)
 Vue.use(Dropdown)
+Vue.use(Upload)
+Vue.use(Steps)
+Vue.use(Step)
+Vue.use(Progress)
+Vue.use(Radio)
 
 Vue.prototype.$message = Message

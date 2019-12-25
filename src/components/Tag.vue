@@ -8,7 +8,7 @@
                 <span class="tags-li-icon" @click="closeTags(index)"><i class="el-icon-close"></i></span>
             </li>
         </ul>
-        <!-- 其他操作按钮 -->
+        <!-- 操作按钮 -->
         <div class="tags-close-box">
             <el-dropdown @command="handleTags">
                 <el-button size="mini">
@@ -36,20 +36,17 @@ export default {
     }
   },
   watch: {
-    // 对router进行监听，每当访问router时，对tags的进行修改
     $route (newValue) {
       this.setTags(newValue)
     }
   },
   created () {
-    // 第一次进入页面时，修改tag的值
     this.setTags(this.$route)
   },
   methods: {
     isActive (path) {
       return path === this.$route.fullPath
     },
-    // 关闭单个标签
     closeTags (index) {
       const delItem = this.tagsList.splice(index, 1)[0]
       const item = this.tagsList[index] ? this.tagsList[index] : this.tagsList[index - 1]
@@ -59,12 +56,10 @@ export default {
         this.$router.push('/')
       }
     },
-    // 关闭全部标签
     closeAll () {
       this.tagsList = []
       this.$router.push('/')
     },
-    // 关闭其他标签
     closeOther () {
       const curItem = this.tagsList.filter(item => {
         return item.path === this.$route.fullPath

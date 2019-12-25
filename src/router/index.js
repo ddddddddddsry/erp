@@ -1,7 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+// 登陆注册部分
 const Login = () =>
   import(/* webpackChunkName:'Login' */ '../components/login/Login.vue') // 登陆页面
+const Register = () =>
+    import(/* webpackChunkName:'Login' */ '../components/login/Register.vue') // 注册页面
+const ResetPasswd = () =>
+    import(/* webpackChunkName:'Login' */ '../components/login/ResetPasswd.vue') // 找回密码页面
 const Home = () => import('../components/Home.vue') // 首页页面
 const Welcome = () => import('../components/Welcome.vue')// 欢迎页面
 const Discount = () => import('../components/discount/discount.vue')// 贴现管理页面
@@ -14,6 +19,8 @@ Vue.use(VueRouter)
 const routes = [
   { path: '/', redirect: '/Home' }, // 重定向至首页
   { path: '/Login', component: Login }, // 登录
+  { path: '/Register', component: Register }, // 注册
+  { path: '/ResetPasswd', component: ResetPasswd }, // 找回密码
   { path: '/Home',
     component: Home,
     redirect: '/Welcome',
