@@ -144,7 +144,7 @@ export default {
           path: '/discount',
           children: [
             { id: 11, menuName: '贴现管理', path: '/discount' },
-            { id: 12, menuName: '承兑银行管理', path: '/acceptanceBank' },
+            { id: 12, menuName: '承兑银行列表', path: '/acceptanceBank' },
             { id: 13, menuName: '承兑财务公司', path: '/financeCompany' }
             // { id: 14, menuName: '分级会员', path: '/member' }
           ]

@@ -38,7 +38,7 @@ const routes = [
       { path: '/acceptanceBank',
         component: AcceptanceBank,
         name: 'AcceptanceBank',
-        meta: { title: '承兑银行管理' } },
+        meta: { title: '承兑银行列表' } },
       { path: '/financeCompany',
         component: FinanceCompany,
         name: 'FinanceCompany',
