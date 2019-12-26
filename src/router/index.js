@@ -18,6 +18,7 @@ const Discount = () => import(/* webpackChunkName:'Discount' */ '../components/d
 const RateList = () => import(/* webpackChunkName:'Discount' */ '../components/discount/RateList.vue') // 实时利率页面
 const AcceptanceBank = () => import(/* webpackChunkName:'Discount' */ '../components/discount/acceptanceBank.vue') // 承兑银行页面
 const FinanceCompany = () => import(/* webpackChunkName:'Discount' */ '../components/discount/financeCompany.vue') // 财务公司
+const ProfitList = () => import(/* webpackChunkName:'Discount' */ '../components/discount/ProfitList.vue') // 财务公司
 
 // 成员管理及其子页面
 const Member = () => import(/* webpackChunkName:'Member' */ '../components/user/Member.vue')
@@ -92,6 +93,14 @@ const routes = [{
     name: 'FinanceCompany',
     meta: {
       title: '承兑财务公司'
+    }
+  },
+  {
+    path: '/ProfitList',
+    component: ProfitList,
+    name: 'ProfitList',
+    meta: {
+      title: '贴现分成列表'
     }
   },
   {
