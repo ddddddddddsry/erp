@@ -9,6 +9,9 @@
         :default-active="activePath"
         :collapse-transition="transition"
         class="el-menu-vertical-demo"
+      background-color="#47678E"
+      text-color="#fff"
+      active-text-color="#55D3E5"
       >
 
         <!-- 个人信息部分 -->
@@ -70,7 +73,7 @@
       </el-menu>
     </el-aside>
     <el-container>
-      <el-header height="40px">
+      <el-header height="42px">
 
         <!-- 控制侧边栏的伸缩按钮 -->
         <div
@@ -132,18 +135,6 @@ export default {
       transition: false,
       menuData: [
         {
-          id: 1,
-          menuName: '贴现管理',
-          ico: 'el-icon-s-data',
-          path: '/discount',
-          children: [
-            { id: 11, menuName: '贴现管理', path: '/discount' },
-            { id: 12, menuName: '承兑银行列表', path: '/acceptanceBank' },
-            { id: 13, menuName: '承兑财务公司', path: '/financeCompany' }
-            // { id: 14, menuName: '分级会员', path: '/member' }
-          ]
-        },
-        {
           id: 2,
           menuName: '利率报价器',
           path: '/Order',
@@ -151,6 +142,18 @@ export default {
           children: [
             { id: 21, menuName: '利率报价器', path: '/Calculator' }
             // { id: 22, menuName: '序列分析', path: '/Analyse' }
+          ]
+        },
+        {
+          id: 1,
+          menuName: '贴现管理',
+          ico: 'el-icon-s-data',
+          path: '/discount',
+          children: [
+            { id: 11, menuName: '企业贴现申请', path: '/discount' },
+            { id: 12, menuName: '承兑银行列表', path: '/acceptanceBank' },
+            { id: 13, menuName: '承兑财务公司', path: '/financeCompany' }
+            // { id: 14, menuName: '分级会员', path: '/member' }
           ]
         },
         {
@@ -197,6 +200,11 @@ export default {
   }
 }
 </script>
+<style lang="less">
+.el-submenu__title i {
+  color : #fff;
+}
+</style>
 <style lang="less" scoped>
 .el-submenu .el-menu-item {
   min-width: auto;
@@ -209,8 +217,10 @@ export default {
 .el-header {
   color: #fff;
   padding: 0px;
+  background: linear-gradient(to top, #47678E 0px, #fff 4px);
   // background: rgb(175, 224, 219);
-  background: linear-gradient(to right, rgb(134, 207, 200),rgb(175, 224, 219), rgb(134, 207, 200));
+  // background: linear-gradient(to right, rgb(134, 207, 200),rgb(175, 224, 219), rgb(134, 207, 200));
+  // background: linear-gradient(to right, #4485A1, rgb(56, 102, 172),#4485A1);
   position: relative;
   // display: flex;
   // align-items: center;
@@ -231,6 +241,7 @@ export default {
   height: 100%;
   .el-menu {
     height: 100%;
+    border-right: solid 0px #e6e6e6;
   }
 }
 .reduce {
@@ -242,13 +253,17 @@ export default {
   font-size: 12px;
   padding: 4px 9px 5px 7px;
   border-radius: 3px;
-  background-color: #10B9D3;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  background-color: #10B9D3;  background-color: rgb(99, 143, 192);
+
   color: #fff;
   cursor: pointer;
 }
 
 .outlogin {
-  background-color: #10B9D3;
+  background-color: #10B9D3;  background-color: rgb(99, 143, 192);
+
   color: #fff;
   border: none;
   position: absolute;
@@ -259,13 +274,13 @@ export default {
 
 }
 .blank {
-  height: 150px;
+  height: 152px;
   width: 64px;
   align-items: center;
   justify-content: center;
   display: flex;
-  background: url(../assets/imgs/bg_main_info2.jpg);
-  background-position: center center;
+  background: url(../assets/imgs/bg_main_info3.jpg);
+  background-position: bottom center;
   background-size: cover;
   box-sizing: border-box;
   .avatar {
@@ -280,13 +295,13 @@ export default {
   }
 }
 .memberInfo {
-  height: 150px;
+  height: 152px;
   display: flex;
-  padding: 15px;
+  padding: 18px;
   box-sizing: border-box;
   align-items: center;
-  background: url(../assets/imgs/bg_main_info2.jpg);
-  background-position: center center;
+  background: url(../assets/imgs/bg_main_info3.jpg);
+  background-position: bottom right;
   background-size: cover;
   position: relative;
   .avatar {
@@ -319,7 +334,8 @@ export default {
   color: #333;
   padding: 0;
   position: relative;
-  background:linear-gradient(to right, #ddd 0px, #eee 4px,#fff 10px);
+  // background:linear-gradient(to right, #ddd 0px, #eee 4px,#fff 10px);
+  background:linear-gradient(to right, #999 0px, #ddd 4px,#fff 10px);
 
   .el-breadcrumb {
     height: 60px;

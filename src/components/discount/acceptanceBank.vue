@@ -1,10 +1,10 @@
 <template>
-  <div class="banklist">
+  <div class="banklist p20">
     <div class="list_up">
       <span>承兑行名称</span
       ><input placeholder="请输入承兑行名称" class="query" type="text" />
       <span>承兑行类型</span>
-      <el-select v-model="selectValue" placeholder="全部">
+      <el-select clearable v-model="selectValue" placeholder="全部">
         <el-option
           v-for="item in options"
           :key="item.value"
@@ -207,28 +207,10 @@ export default {
   }
 }
 </script>
-<style lang="less">
-.list_up {
-  .el-input__inner {
-    height: 32px;
-    line-height: 32px;
-  }
-  .el-input__icon {
-    line-height: 32px;
-  }
-  .btn {
-    margin-left: 10px;
-  }
-}
-</style>
+
 <style lang="less" scoped>
-.banklist {
-  color: #666;
-  font-size: 14px;
-  padding: 20px;
-}
 .blueBTN {
-  background-color: #10b9d3;
+  background-color: #47678E;
   color: #fff;
   border: none;
   border-radius: 3px;
@@ -250,32 +232,5 @@ export default {
   border-radius: 3px;
   height: 25px;
   margin-right: 10px;
-}
-
-.list_up {
-  .query {
-    border: 1px solid#DCDFE6;
-    height: 30px;
-    vertical-align: middle;
-    margin: 0 10px;
-    padding: 0 10px;
-    border-radius: 3px;
-  }
-  .el-select {
-    vertical-align: middle;
-    margin-left: 10px;
-  }
-}
-input::-webkit-input-placeholder {
-  color: #c0c4cc;
-}
-input:-moz-placeholder {
-  color: #c0c4cc;
-}
-input::-moz-placeholder {
-  color: #c0c4cc;
-}
-input:-ms-input-placeholder {
-  color: #c0c4cc;
 }
 </style>

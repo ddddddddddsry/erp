@@ -16,9 +16,9 @@ dd {
     margin: 0;
     padding: 0;
     /*字体设置*/
-    font-size: 16px;
+    font-size: 14px;
     font-family: "Microsoft Yahei", sans-serif;
-    color: #303133;
+    color: #333;
     /* 去掉列表的原点 */
     list-style: none;
     /* 默认鼠标 */
@@ -104,4 +104,56 @@ table {
 
 .ellipsis-2 {
     .ellipsis();
+}
+
+// 列表页的公共padding
+.p20 {
+    padding: 20px;
+}
+
+// 查询类样式
+.list_up {
+    .query {
+        border: 1px solid#DCDFE6;
+        height: 30px;
+        vertical-align: middle;
+        margin: 0 10px;
+        padding: 0 10px;
+        border-radius: 3px;
+    }
+
+    .el-select {
+        vertical-align: middle;
+        margin-left: 10px;
+    }
+
+    .el-input__inner {
+        height: 32px;
+        line-height: 32px;
+    }
+
+    .el-input__icon {
+        line-height: 32px;
+    }
+
+    .btn {
+        margin-left: 10px;
+    }
+}
+
+// input框的placeholder字体样式
+input::-webkit-input-placeholder {
+    color: #c0c4cc;
+}
+
+input:-moz-placeholder {
+    color: #c0c4cc;
+}
+
+input::-moz-placeholder {
+    color: #c0c4cc;
+}
+
+input:-ms-input-placeholder {
+    color: #c0c4cc;
 }

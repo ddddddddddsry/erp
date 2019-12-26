@@ -16,9 +16,9 @@ dd {
   margin: 0;
   padding: 0;
   /*字体设置*/
-  font-size: 16px;
+  font-size: 14px;
   font-family: "Microsoft Yahei", sans-serif;
-  color: #303133;
+  color: #333;
   /* 去掉列表的原点 */
   list-style: none;
   /* 默认鼠标 */
@@ -91,4 +91,41 @@ table {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+.p20 {
+  padding: 20px;
+}
+.list_up .query {
+  border: 1px solid #DCDFE6;
+  height: 30px;
+  vertical-align: middle;
+  margin: 0 10px;
+  padding: 0 10px;
+  border-radius: 3px;
+}
+.list_up .el-select {
+  vertical-align: middle;
+  margin-left: 10px;
+}
+.list_up .el-input__inner {
+  height: 32px;
+  line-height: 32px;
+}
+.list_up .el-input__icon {
+  line-height: 32px;
+}
+.list_up .btn {
+  margin-left: 10px;
+}
+input::-webkit-input-placeholder {
+  color: #c0c4cc;
+}
+input:-moz-placeholder {
+  color: #c0c4cc;
+}
+input::-moz-placeholder {
+  color: #c0c4cc;
+}
+input:-ms-input-placeholder {
+  color: #c0c4cc;
 }

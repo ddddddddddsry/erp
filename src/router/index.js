@@ -16,6 +16,7 @@ const Calculator = () => import('../components/Calculator.vue') // 利率报价�
 const Discount = () => import('../components/discount/discount.vue')// 贴现管理页面
 const AcceptanceBank = () => import('../components/discount/acceptanceBank.vue')// 承兑银行页面
 const FinanceCompany = () => import('../components/discount/financeCompany.vue')// 财务公司
+const Apply = () => import('../components/discount/Apply.vue')// 企业申请贴现
 const Member = () => import('../components/user/Member.vue')
 const UserList = () => import('../components/user/UserList.vue')
 const Under = () => import('../components/user/Under.vue')
@@ -42,7 +43,11 @@ const routes = [
       { path: '/discount',
         component: Discount,
         name: 'Discount',
-        meta: { title: '贴现管理' } },
+        meta: { title: '企业贴现申请' } },
+      { path: '/Apply',
+        component: Apply,
+        name: 'Apply',
+        meta: { title: '企业贴现申请' } },
       { path: '/acceptanceBank',
         component: AcceptanceBank,
         name: 'AcceptanceBank',
