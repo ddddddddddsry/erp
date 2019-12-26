@@ -34,7 +34,10 @@ import {
   Option,
   DatePicker,
   Table,
-  TableColumn
+  TableColumn,
+  MessageBox,
+  Dialog
+
 } from 'element-ui'
 
 Vue.use(Button)
@@ -71,5 +74,7 @@ Vue.use(Option)
 Vue.use(DatePicker)
 Vue.use(Table)
 Vue.use(TableColumn)
+Vue.use(Dialog)
 
 Vue.prototype.$message = Message
+Vue.prototype.$confirm = MessageBox.confirm
