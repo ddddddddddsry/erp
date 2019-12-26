@@ -105,7 +105,7 @@ table {
 }
 .list_up .el-select {
   vertical-align: middle;
-  margin-left: 10px;
+  margin: 0 10px;
 }
 .list_up .el-input__inner {
   height: 32px;
@@ -116,6 +116,12 @@ table {
 }
 .list_up .btn {
   margin-left: 10px;
+}
+.list_up .el-date-editor.el-input,
+.list_up .el-date-editor.el-input__inner {
+  height: 32px;
+  line-height: 32px;
+  margin: 0 10px;
 }
 input::-webkit-input-placeholder {
   color: #c0c4cc;
