@@ -1,11 +1,14 @@
 <template>
   <div class="calculator">
+    <!-- 头部的图片栏 -->
     <div class="header"></div>
+    <!-- 主盒子，用el-row分为左右两部分 -->
     <div class="main">
       <el-row
         type="flex"
         justify="space-around"
       >
+        <!-- 左侧报价器部分 -->
         <el-col :span="9">
           <div class="calBox">
             <div class="title">
@@ -13,6 +16,7 @@
             </div>
             <div class="box">
               <p>测一测，手上银承今天值多少钱？</p>
+              <!-- 报价器表单输入部分 -->
               <el-form
                 ref="form"
                 :model="form"
@@ -60,6 +64,7 @@
                   </el-col>
                 </el-row>
               </el-form>
+              <!-- 报价器计算结果部分 -->
               <el-row class="result clearfix">
                 <el-col :span="6">
                   <div>
@@ -90,6 +95,7 @@
             </div>
           </div>
         </el-col>
+        <!-- 右侧宣传信息部分 -->
         <el-col :span="9">
           <div class="news">
             <h3>让中小企业票据贴现又快又省</h3>
@@ -105,8 +111,8 @@
           </div>
         </el-col>
       </el-row>
-
     </div>
+    <!-- 页脚的信息展示部分 -->
     <div class="footernews">
       <el-row
         type="flex"
@@ -142,12 +148,13 @@ export default {
   data () {
     return {
       form: {
-        bank: '',
-        money: ''
+        bank: '', // 计价器选择的银行
+        money: '' // 计价器录入的金额
       }
     }
   },
   methods: {
+    // 提交表单进行报价计算
     onSubmit () {
 
     }
@@ -167,20 +174,24 @@ export default {
   color: #fff;
   min-width: 1180px;
 }
+// 头部图片栏
 .header {
   background: url('../assets/imgs/bg_header.jpg');
   background-position: center 200px;
   background-size: cover;
   height: 110px;
 }
+// 主盒子左右padding
 .main {
   padding: 50px 0px;
 }
+// 页脚信息栏
 .footernews {
   background-color: rgb(240, 240, 240);
   height: 70px;
   margin-left: 6px;
 }
+// 报价器部分的title
 .calBox .title {
   background-color: rgb(20, 37, 55);
   width: 200px;
@@ -197,7 +208,7 @@ export default {
     color: #fff;
     z-index: 1;
   }
-
+  // 直角梯形的实现
   &::after {
     display: inline-block;
     content: '';
@@ -213,6 +224,7 @@ export default {
     border-top: 50px solid transparent;
   }
 }
+// 报价器主体部分
 .calBox .box {
   background-color: rgb(20, 37, 55);
   width: 500px;
@@ -261,6 +273,7 @@ export default {
     }
   }
 }
+// 右侧信息展示部分
 .news {
   h3 {
     font-size: 20px;
@@ -286,6 +299,8 @@ export default {
     }
   }
 }
+// 页脚信息栏的左右两部分
+// 左
 .left {
   p {
     height: 35px;
@@ -295,6 +310,7 @@ export default {
     font-size: 16px;
   }
 }
+// 右
 .right {
   overflow: hidden;
   ul {
