@@ -247,7 +247,7 @@ export default {
     next () {
       if (this.active++ > 2) this.active = 3
       if (this.active === 3) {
-        // console.log('111')
+        // // console.log('111')
 
         var timer = setInterval(() => {
           this.num += 3.3

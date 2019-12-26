@@ -155,7 +155,7 @@ export default {
           })
         )
         .then(res => {
-          console.log(res)
+          // console.log(res)
           if (res.data.respBody.isSuccess === 'true') {
             callback()
           } else {
@@ -163,7 +163,7 @@ export default {
           }
         })
         .catch(e => {
-          console.log(e)
+          // console.log(e)
         })
     }
     return {
@@ -279,7 +279,7 @@ export default {
       //       })
       //   const res = await this.$http.post(url, para)
       //   const { data } = res
-      //   console.log(data)
+      //   // console.log(data)
       //   // const { meta: { status, msg }, data } = res
       //   if (data.respBody.isSuccess === 'true') {
       //     this.$message({
@@ -300,7 +300,7 @@ export default {
       //         pagesize: 1
       //       })
       //     )
-      //     console.log(userData)
+      //     // console.log(userData)
       //     if (userData.data.respBody.isSuccess === 'OK') {
       //       let roleType = userData.data.respBody.queries[0].roleType
       //       // 编程式导航
@@ -320,7 +320,7 @@ export default {
       //     })
       //   }
       // } catch (e) {
-      //   console.log(e)
+      //   // console.log(e)
       // }
     },
     // 重置按钮重置表单
@@ -333,16 +333,16 @@ export default {
         'http://122.112.247.149:8001/api/v1/getVerifyCode'
       )
       // const res = await this.$http.post('getVerifyCode')
-      console.log(res)
+      // console.log(res)
       if (res.status === 200) {
         this.picCodeSrc = `data:image/png;base64,${res.data.image}`
-        console.log(this.picCodeSrc)
+        // console.log(this.picCodeSrc)
       }
     },
     // 点击发送短信验证码，开启倒计时，60秒后重新发送
     getMsgCode () {
       this.$refs.msgLoginForm.validateField('phone', phoneError => {
-        console.log(`${phoneError}***************************`)
+        // console.log(`${phoneError}***************************`)
         if (!phoneError) {
           // 按钮60秒倒计时
           this.disabled = true

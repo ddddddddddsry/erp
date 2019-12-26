@@ -170,7 +170,7 @@ export default {
   methods: {
     // 关闭对话框
     closeDialog () {
-      console.log('111')
+      // console.log('111')
       this.$refs.dialogForm.resetFields()
       this.$set(this.dialogForm)
     },
@@ -209,28 +209,4 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.blueBTN {
-  background-color: #47678E;
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  height: 25px;
-  margin-right: 10px;
-}
-.greenBTN {
-  background-color: #39886e;
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  height: 25px;
-  margin-right: 10px;
-}
-.grayBTN {
-  background-color: #909399;
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  height: 25px;
-  margin-right: 10px;
-}
 </style>

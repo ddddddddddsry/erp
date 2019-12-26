@@ -188,7 +188,7 @@ export default {
   methods: {
     // 点击侧边菜单项时，存储路由路径至sessionstorage里，并设置activepath
     toPath (path) {
-      // console.log(path)
+      // // console.log(path)
       window.sessionStorage.setItem('path', path)
       this.activePath = path
     },
