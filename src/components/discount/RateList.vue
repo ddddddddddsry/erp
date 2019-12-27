@@ -20,6 +20,22 @@
               prop="bank"
               label="承兑行类型"
             >
+              <template slot-scope="scope">
+                <button
+                  v-if="scope.row.bank == '一类银行'"
+                  class="blueBTN"
+                >
+                  一类银行</button><button
+                  v-if="scope.row.bank == '二类银行'"
+                  class="greenBTN"
+                >
+                  二类银行</button><button
+                  v-if="scope.row.bank == '三类银行'"
+                  class="grayBTN"
+                >
+                  三类银行
+                </button>
+              </template>
             </el-table-column>
             <el-table-column
               prop="remainday"
@@ -30,26 +46,26 @@
               label="票面金额(万元)"
               align="center"
             >
-            <el-table-column
-              prop="money1"
-              label="0<票面金额<10"
-            >
-            </el-table-column>
-            <el-table-column
-              prop="money2"
-              label="10≤票面金额<50"
-            >
-            </el-table-column>
-            <el-table-column
-              prop="money3"
-              label="50≤票面金额<100"
-            >
-            </el-table-column>
-            <el-table-column
-              prop="money4"
-              label="100≤票面金额≤500"
-            >
-            </el-table-column>
+              <el-table-column
+                prop="money1"
+                label="0<票面金额<10"
+              >
+              </el-table-column>
+              <el-table-column
+                prop="money2"
+                label="10≤票面金额<50"
+              >
+              </el-table-column>
+              <el-table-column
+                prop="money3"
+                label="50≤票面金额<100"
+              >
+              </el-table-column>
+              <el-table-column
+                prop="money4"
+                label="100≤票面金额≤500"
+              >
+              </el-table-column>
             </el-table-column>
           </el-table>
         </div>
@@ -70,6 +86,22 @@
               prop="bank"
               label="承兑行类型"
             >
+              <template slot-scope="scope">
+                <button
+                  v-if="scope.row.bank == '财票一类'"
+                  class="blueBTN"
+                >
+                  财票一类</button><button
+                  v-if="scope.row.bank == '财票二类'"
+                  class="greenBTN"
+                >
+                  财票二类</button><button
+                  v-if="scope.row.bank == '财票三类'"
+                  class="grayBTN"
+                >
+                  财票三类
+                </button>
+              </template>
             </el-table-column>
             <el-table-column
               prop="remainday"
@@ -80,26 +112,26 @@
               label="票面金额(万元)"
               align="center"
             >
-            <el-table-column
-              prop="money1"
-              label="0<票面金额<10"
-            >
-            </el-table-column>
-            <el-table-column
-              prop="money2"
-              label="10≤票面金额<50"
-            >
-            </el-table-column>
-            <el-table-column
-              prop="money3"
-              label="50≤票面金额<100"
-            >
-            </el-table-column>
-            <el-table-column
-              prop="money4"
-              label="100≤票面金额≤500"
-            >
-            </el-table-column>
+              <el-table-column
+                prop="money1"
+                label="0<票面金额<10"
+              >
+              </el-table-column>
+              <el-table-column
+                prop="money2"
+                label="10≤票面金额<50"
+              >
+              </el-table-column>
+              <el-table-column
+                prop="money3"
+                label="50≤票面金额<100"
+              >
+              </el-table-column>
+              <el-table-column
+                prop="money4"
+                label="100≤票面金额≤500"
+              >
+              </el-table-column>
             </el-table-column>
           </el-table>
         </div>
@@ -155,21 +187,23 @@ export default {
         money2: '3.7000%',
         money3: '3.5500%',
         money4: '3.4000%'
-      }, {
-        bank: '四类银行',
-        remainday: '0<剩余期限≤140',
-        money1: '4.0000%',
-        money2: '3.6000%',
-        money3: '3.4500%',
-        money4: '3.3000%'
-      }, {
-        bank: '四类银行',
-        remainday: '140<剩余期限≤365',
-        money1: '4.0000%',
-        money2: '3.8500%',
-        money3: '3.7000%',
-        money4: '3.5000%'
-      } ],
+      }
+      // {
+      //   bank: '四类银行',
+      //   remainday: '0<剩余期限≤140',
+      //   money1: '4.0000%',
+      //   money2: '3.6000%',
+      //   money3: '3.4500%',
+      //   money4: '3.3000%'
+      // }, {
+      //   bank: '四类银行',
+      //   remainday: '140<剩余期限≤365',
+      //   money1: '4.0000%',
+      //   money2: '3.8500%',
+      //   money3: '3.7000%',
+      //   money4: '3.5000%'
+      // }
+      ],
       tableData1: [{
         bank: '财票一类',
         remainday: '0<剩余期限≤140',
@@ -217,7 +251,7 @@ export default {
   },
   methods: {
     handleClick (tab, event) {
-      console.log(tab, event)
+      // console.log(tab, event)
     }
   }
 }

@@ -5,11 +5,26 @@
         <h3>和同金融服务系统</h3>
         <p>欢迎使用 和同金融服务系统 选择项目后直接登录</p>
         <ul class="nav">
-          <li><a @click="changeCurrent('贴现管理系统')" :class="{current: current === '贴现管理系统'}">贴现管理系统</a></li>
-          <li><a @click="changeCurrent('信用卡管理系统')" :class="{current: current === '信用卡管理系统'}">信用卡管理系统</a></li>
-          <li><a @click="changeCurrent('消费信贷系统')" :class="{current: current === '消费信贷系统'}">消费信贷系统</a></li>
-          <li><a @click="changeCurrent('抵押信贷系统')" :class="{current: current === '抵押信贷系统'}">抵押信贷系统</a></li>
-          <li><a @click="changeCurrent('商业融资系统')" :class="{current: current === '商业融资系统'}">商业融资系统</a></li>
+          <li><a
+              @click="changeCurrent('贴现管理系统')"
+              :class="{current: current === '贴现管理系统'}"
+            >贴现管理系统</a></li>
+          <li><a
+              @click="changeCurrent('信用卡管理系统')"
+              :class="{current: current === '信用卡管理系统'}"
+            >信用卡管理系统</a></li>
+          <li><a
+              @click="changeCurrent('消费信贷系统')"
+              :class="{current: current === '消费信贷系统'}"
+            >消费信贷系统</a></li>
+          <li><a
+              @click="changeCurrent('抵押信贷系统')"
+              :class="{current: current === '抵押信贷系统'}"
+            >抵押信贷系统</a></li>
+          <li><a
+              @click="changeCurrent('商业融资系统')"
+              :class="{current: current === '商业融资系统'}"
+            >商业融资系统</a></li>
         </ul>
       </div>
       <el-tabs
@@ -155,7 +170,7 @@ export default {
           })
         )
         .then(res => {
-          console.log(res)
+          // console.log(res)
           if (res.data.respBody.isSuccess === 'true') {
             callback()
           } else {
@@ -163,7 +178,7 @@ export default {
           }
         })
         .catch(e => {
-          console.log(e)
+          // console.log(e)
         })
     }
     return {
@@ -260,8 +275,23 @@ export default {
         input.type = 'password'
       }
     },
-    async login (form) {
-      this.$router.push('/Welcome')
+    login (form) {
+      if (this.passwdLoginForm.phone === '13333333333' && this.passwdLoginForm.passwd === '123456') {
+        this.$message({
+          type: 'success',
+          message: '登陆成功',
+          duration: 3000
+        })
+        localStorage.setItem('token', 'dengluchenggong')
+        this.$router.push('/Home')
+      } else {
+        this.$message({
+          type: 'error',
+          message: '用户名或密码错误',
+          duration: 3000
+        })
+      }
+
       // try {
       //   await this.$refs[form].validate()
       //   // 校验成功, 发送ajax
@@ -279,7 +309,7 @@ export default {
       //       })
       //   const res = await this.$http.post(url, para)
       //   const { data } = res
-      //   console.log(data)
+      //   // console.log(data)
       //   // const { meta: { status, msg }, data } = res
       //   if (data.respBody.isSuccess === 'true') {
       //     this.$message({
@@ -300,7 +330,7 @@ export default {
       //         pagesize: 1
       //       })
       //     )
-      //     console.log(userData)
+      //     // console.log(userData)
       //     if (userData.data.respBody.isSuccess === 'OK') {
       //       let roleType = userData.data.respBody.queries[0].roleType
       //       // 编程式导航
@@ -320,7 +350,7 @@ export default {
       //     })
       //   }
       // } catch (e) {
-      //   console.log(e)
+      //   // console.log(e)
       // }
     },
     // 重置按钮重置表单
@@ -333,16 +363,16 @@ export default {
         'http://122.112.247.149:8001/api/v1/getVerifyCode'
       )
       // const res = await this.$http.post('getVerifyCode')
-      console.log(res)
+      // console.log(res)
       if (res.status === 200) {
         this.picCodeSrc = `data:image/png;base64,${res.data.image}`
-        console.log(this.picCodeSrc)
+        // console.log(this.picCodeSrc)
       }
     },
     // 点击发送短信验证码，开启倒计时，60秒后重新发送
     getMsgCode () {
       this.$refs.msgLoginForm.validateField('phone', phoneError => {
-        console.log(`${phoneError}***************************`)
+        // console.log(`${phoneError}***************************`)
         if (!phoneError) {
           // 按钮60秒倒计时
           this.disabled = true
@@ -440,13 +470,13 @@ export default {
         display: inline-block;
         color: #fff;
         padding: 10px 0;
-        transition: all .5s;
+        transition: all 0.5s;
         &:hover {
           background-color: #115ca7;
         }
-      &.current {
-        background-color: #115ca7;
-      }
+        &.current {
+          background-color: #115ca7;
+        }
       }
     }
   }
@@ -454,7 +484,7 @@ export default {
   .el-tabs {
     align-self: flex-end;
     border-radius: 5px;
-    background: rgb(71, 103, 142,.5);
+    background: rgb(71, 103, 142, 0.5);
     margin-bottom: 10px;
   }
 
@@ -484,7 +514,7 @@ export default {
   }
 
   .message {
-    border-top: 2px solid #409EFF;
+    border-top: 2px solid #409eff;
     font-size: 14px;
     display: flex;
     justify-content: space-around;

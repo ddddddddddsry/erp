@@ -245,7 +245,7 @@ export default {
         // 18800266192
         const res = await this.$http.post('member/register', qs.stringify(this.form))
         const { data } = res
-        console.log(res)
+        // console.log(res)
         // const { meta: { status, msg }, data } = res
         if (data.respBody.isSuccess === 'true') {
           this.$message({
@@ -263,7 +263,7 @@ export default {
           })
         }
       } catch (e) {
-        console.log(e)
+        // console.log(e)
       }
     },
     // 重置按钮重置表单
@@ -273,7 +273,7 @@ export default {
     // 点击发送短信验证码，开启倒计时，60秒后重新发送
     getMsgCode () {
       this.$refs.form.validateField('phone', (phoneError) => {
-        console.log(`${phoneError}***************************`)
+        // console.log(`${phoneError}***************************`)
         if (!phoneError) {
           // 按钮60秒倒计时
           this.disabled = true
@@ -308,7 +308,7 @@ export default {
     //       let user = {
     //         name: atob(token.split('.')[1]).name || "admin"
     //       };
-    //       console.log(user)
+    //       // console.log(user)
     //       this.$emit('login');
     //       this.$router.push('/profile');
     //     }
@@ -330,7 +330,7 @@ export default {
     //     email: this.email,
     //     passwd: this.password,
     //   })).then(res => {
-    //     console.log(res)
+    //     // console.log(res)
     //     if (res.data.respBody.isSuccess) {
 
     //       this.isExist = !this.isExist;

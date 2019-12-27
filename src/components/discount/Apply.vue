@@ -334,6 +334,8 @@ export default {
       if (this.active++ > 2) this.active = 3
       // console.log(this.active)
       if (this.active === 3) {
+        // // console.log('111')
+
         var timer = setInterval(() => {
           this.num += 3.3
           if (this.num >= 100) {

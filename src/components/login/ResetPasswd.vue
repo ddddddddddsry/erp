@@ -94,14 +94,14 @@ export default {
     // 发送验证码前校验用户是否存在，存在才允许发送验证码
     var checkPhone = (rule, value, callback) => {
       this.$http.post('member/validatePhone', qs.stringify({ phone: this.form.phone })).then(res => {
-        console.log(res)
+        // console.log(res)
         if (res.data.respBody.isSuccess === 'true') {
           callback()
         } else {
           callback(new Error('用户名不存在请重新输入'))
         }
       }).catch(e => {
-        console.log(e)
+        // console.log(e)
       })
     }
     return {
@@ -183,7 +183,7 @@ export default {
           })
         }
       } catch (e) {
-        console.log(e)
+        // console.log(e)
       }
     },
     // 重置按钮重置表单
@@ -194,7 +194,7 @@ export default {
     // 点击发送短信验证码，开启倒计时，60秒后重新发送
     getMsgCode () {
       this.$refs.form.validateField('phone', (phoneError) => {
-        console.log(`${phoneError}***************************`)
+        // console.log(`${phoneError}***************************`)
         if (!phoneError) {
           // 按钮60秒倒计时
           this.disabled = true

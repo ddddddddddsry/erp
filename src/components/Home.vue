@@ -155,6 +155,7 @@ export default {
             { id: 15, menuName: '实时利率列表', path: '/RateList' },
             { id: 12, menuName: '承兑银行列表', path: '/acceptanceBank' },
             { id: 13, menuName: '承兑财务公司', path: '/financeCompany' },
+            { id: 16, menuName: '贴现数据列表', path: '/DiscountData' },
             { id: 14, menuName: '贴现分成列表', path: '/ProfitList' }
             // { id: 14, menuName: '分级会员', path: '/member' }
           ]
@@ -188,7 +189,7 @@ export default {
   methods: {
     // 点击侧边菜单项时，存储路由路径至sessionstorage里，并设置activepath
     toPath (path) {
-      // console.log(path)
+      // // console.log(path)
       window.sessionStorage.setItem('path', path)
       this.activePath = path
     },
@@ -198,6 +199,7 @@ export default {
     },
     // 退出登录
     outLogin () {
+      localStorage.removeItem('token')
       window.sessionStorage.clear()
       this.$router.push('/Login')
     },

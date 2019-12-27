@@ -135,3 +135,27 @@ input::-moz-placeholder {
 input:-ms-input-placeholder {
   color: #c0c4cc;
 }
+.blueBTN {
+  background-color: #47678E;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  height: 25px;
+  margin-right: 10px;
+}
+.greenBTN {
+  background-color: #39886e;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  height: 25px;
+  margin-right: 10px;
+}
+.grayBTN {
+  background-color: #909399;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  height: 25px;
+  margin-right: 10px;
+}

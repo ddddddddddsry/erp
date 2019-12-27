@@ -12,12 +12,15 @@ const Welcome = () => import(/* webpackChunkName:'Index' */ '../components/Welco
 
 // 利率报价器
 const Calculator = () => import(/* webpackChunkName:'Calculator' */ '../components/Calculator.vue') // 利率报价器页
+
+// 贴现管理及其子页面
 const Discount = () => import(/* webpackChunkName:'Discount' */ '../components/discount/discount.vue') // 贴现管理页面
 const RateList = () => import(/* webpackChunkName:'Discount' */ '../components/discount/RateList.vue') // 实时利率页面
 const AcceptanceBank = () => import(/* webpackChunkName:'Discount' */ '../components/discount/acceptanceBank.vue') // 承兑银行页面
 const FinanceCompany = () => import(/* webpackChunkName:'Discount' */ '../components/discount/financeCompany.vue') // 财务公司
-const ProfitList = () => import(/* webpackChunkName:'Discount' */ '../components/discount/ProfitList.vue') // 财务公司
-const Apply = () => import('../components/discount/Apply.vue')// 企业申请贴现
+const ProfitList = () => import(/* webpackChunkName:'Discount' */ '../components/discount/ProfitList.vue') // 贴现分成列表
+const DiscountData = () => import(/* webpackChunkName:'Discount' */ '../components/discount/DiscountData.vue') // 贴现数据列表
+const Apply = () => import(/* webpackChunkName:'Discount' */ '../components/discount/Apply.vue')// 企业申请贴现
 
 // 成员管理及其子页面
 const Member = () => import(/* webpackChunkName:'Member' */ '../components/user/Member.vue')
@@ -99,6 +102,14 @@ const routes = [{
     }
   },
   {
+    path: '/DiscountData',
+    component: DiscountData,
+    name: 'DiscountData',
+    meta: {
+      title: '贴现数据列表'
+    }
+  },
+  {
     path: '/ProfitList',
     component: ProfitList,
     name: 'ProfitList',
@@ -136,6 +147,15 @@ const routes = [{
 
 const router = new VueRouter({
   routes
+})
+
+// 路由拦截
+router.beforeEach((to, from, next) => {
+  if (to.path === '/Login' || localStorage.getItem('token')) {
+    next()
+  } else {
+    next('/Login')
+  }
 })
 
 export default router
