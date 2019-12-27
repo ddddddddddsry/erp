@@ -155,7 +155,7 @@ export default {
             { id: 15, menuName: '实时利率列表', path: '/RateList' },
             { id: 12, menuName: '承兑银行列表', path: '/acceptanceBank' },
             { id: 13, menuName: '承兑财务公司', path: '/financeCompany' },
-            { id: 13, menuName: '贴现分成列表', path: '/ProfitList' }
+            { id: 14, menuName: '贴现分成列表', path: '/ProfitList' }
             // { id: 14, menuName: '分级会员', path: '/member' }
           ]
         },
