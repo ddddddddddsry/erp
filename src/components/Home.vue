@@ -199,6 +199,7 @@ export default {
     },
     // 退出登录
     outLogin () {
+      localStorage.removeItem('token')
       window.sessionStorage.clear()
       this.$router.push('/Login')
     },

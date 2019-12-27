@@ -31,8 +31,8 @@ Vue.use(VueRouter)
 
 const routes = [{
   path: '/',
-  redirect: '/Login'
-}, // 重定向至登录
+  redirect: '/Home'
+}, // 重定向至首页
 {
   path: '/Login',
   component: Login
@@ -147,6 +147,15 @@ const routes = [{
 
 const router = new VueRouter({
   routes
+})
+
+// 路由拦截
+router.beforeEach((to, from, next) => {
+  if (to.path === '/Login' || localStorage.getItem('token')) {
+    next()
+  } else {
+    next('/Login')
+  }
 })
 
 export default router
