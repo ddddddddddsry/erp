@@ -73,9 +73,9 @@ const routes = [{
       title: '贴现管理'
     }
   },
-  { path: '/Apply',
+  { path: '/discount/Apply',
     component: Apply,
-    name: 'Apply',
+    name: 'DiscountApply',
     meta: { title: '企业贴现申请' } },
   {
     path: '/RateList',

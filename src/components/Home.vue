@@ -14,18 +14,11 @@
         text-color="#fff"
         active-text-color="#55D3E5"
       >
-
         <!-- 个人信息头部分 -->
         <!-- 不收缩时展示详细信息（头像+用户名+个人中心入口） -->
-        <div
-          class="memberInfo"
-          v-show="!isCollapse"
-        >
+        <div class="memberInfo" v-show="!isCollapse">
           <div class="avatar">
-            <img
-              src="../assets/imgs/avatar.jpg"
-              alt=""
-            >
+            <img src="../assets/imgs/avatar.jpg" alt="" />
           </div>
           <div class="info">
             <p>
@@ -35,22 +28,15 @@
                 content="个人中心"
                 placement="bottom"
               >
-                <span @click="goPersonCenter">宋茹怡
-                </span>
+                <span @click="goPersonCenter">宋茹怡 </span>
               </el-tooltip>
             </p>
           </div>
         </div>
         <!-- 收缩时只展示头像 -->
-        <div
-          class="blank"
-          v-show="isCollapse"
-        >
+        <div class="blank" v-show="isCollapse">
           <div class="avatar">
-            <img
-              src="../assets/imgs/avatar.jpg"
-              alt=""
-            >
+            <img src="../assets/imgs/avatar.jpg" alt="" />
           </div>
         </div>
         <!-- 无下拉的菜单项 -->
@@ -61,24 +47,25 @@
           :index="citem.path"
         >
           <i :class="citem.ico"></i>
-          <span>{{citem.menuName}}</span>
+          <span>{{ citem.menuName }}</span>
         </el-menu-item>
         <!-- 有下拉的菜单项 -->
         <el-submenu
-          :index="item.id+''"
+          :index="item.id + ''"
           v-for="item in menuData"
           :key="item.id"
         >
           <template slot="title">
             <i :class="item.ico"></i>
-            <span>{{item.menuName}}</span>
+            <span>{{ item.menuName }}</span>
           </template>
           <el-menu-item
             @click="toPath(citem.path)"
             v-for="citem in item.children"
             :key="citem.id"
             :index="citem.path"
-          >{{citem.menuName}}</el-menu-item>
+            >{{ citem.menuName }}</el-menu-item
+          >
         </el-submenu>
       </el-menu>
     </el-aside>
@@ -87,18 +74,9 @@
       <!-- 头部 -->
       <el-header height="42px">
         <!-- 控制侧边栏的伸缩按钮 -->
-        <div
-          @click="toggle"
-          class="reduce"
-        >
-          <i
-            v-show="!isCollapse"
-            class="el-icon-d-arrow-left"
-          ></i>
-          <i
-            v-show="isCollapse"
-            class="el-icon-d-arrow-right"
-          ></i>
+        <div @click="toggle" class="reduce">
+          <i v-show="!isCollapse" class="el-icon-d-arrow-left"></i>
+          <i v-show="isCollapse" class="el-icon-d-arrow-right"></i>
         </div>
         <!-- 导航tag组件 -->
         <TagsView></TagsView>
@@ -109,17 +87,16 @@
           content="退出登录"
           placement="bottom"
         >
-          <el-button
-            @click="outLogin"
-            class="el-icon-switch-button outlogin"
-          >
+          <el-button @click="outLogin" class="el-icon-switch-button outlogin">
           </el-button>
         </el-tooltip>
       </el-header>
       <!-- 页面主要内容展示区域 -->
       <el-main>
         <div class="content">
-          <router-view></router-view>
+          <transition name="fade-transform" mode="out-in">
+            <router-view></router-view>
+          </transition>
         </div>
       </el-main>
     </el-container>
@@ -129,7 +106,7 @@
 // 引入导航tag组件
 import TagsView from './Tag.vue'
 export default {
-  created () {
+  created() {
     // 登录进入页面时默认为welcome页面，此时侧边菜单栏默认选中welcome菜单项
     if (this.$route.path === '/Welcome') {
       this.activePath = '/Welcome'
@@ -141,10 +118,11 @@ export default {
   components: {
     TagsView
   },
-  data () {
+  data() {
     return {
       isCollapse: false, // 侧边栏是否伸缩
-      menuData: [ // 侧边栏导航可下拉的菜单项
+      menuData: [
+        // 侧边栏导航可下拉的菜单项
         {
           id: 1,
           menuName: '贴现管理',
@@ -165,12 +143,15 @@ export default {
           menuName: '成员管理',
           ico: 'el-icon-s-order',
           path: '/Member',
-          children: [{ id: 31, menuName: '贴现用户列表', path: '/Member' },
-          // { id: 32, menuName: '营销用户列表', path: '/UserList' },
-            { id: 33, menuName: '我的下级用户', path: '/Under' }]
+          children: [
+            { id: 31, menuName: '贴现用户列表', path: '/Member' },
+            // { id: 32, menuName: '营销用户列表', path: '/UserList' },
+            { id: 33, menuName: '我的下级用户', path: '/Under' }
+          ]
         }
       ],
-      menuData1: [ // 侧边栏导航不可下拉的菜单项
+      menuData1: [
+        // 侧边栏导航不可下拉的菜单项
         {
           id: 2,
           menuName: 'Welcome',
@@ -182,36 +163,39 @@ export default {
           menuName: '利率报价器',
           path: '/Calculator',
           ico: 'el-icon-edit-outline'
-        }],
+        }
+      ],
       activePath: '' // 当前激活菜单的index路由地址
     }
   },
   methods: {
     // 点击侧边菜单项时，存储路由路径至sessionstorage里，并设置activepath
-    toPath (path) {
-      // // console.log(path)
+    toPath(path) {
       window.sessionStorage.setItem('path', path)
+      if (path === '/discount/Apply') {
+        this.activePath = '/discount'
+      }
       this.activePath = path
     },
     // 点击切换侧边栏伸缩按钮进行切换
-    toggle () {
+    toggle() {
       this.isCollapse = !this.isCollapse
     },
     // 退出登录
-    outLogin () {
+    outLogin() {
       localStorage.removeItem('token')
       window.sessionStorage.clear()
       this.$router.push('/Login')
     },
     // 点击箭头前往个人中心
-    goPersonCenter () {
-
-    }
+    goPersonCenter() {}
   },
   watch: {
-    '$route.path': function (newVal, oldVal) {
+    '$route.path': function(newVal, oldVal) {
       if (newVal === '/Welcome') {
         this.activePath = '/Welcome'
+      } else if (newVal === '/discount/Apply') {
+        this.activePath = '/discount'
       } else {
         this.activePath = newVal
       }

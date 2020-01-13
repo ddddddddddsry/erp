@@ -46,57 +46,54 @@
     </el-pagination>
     <!-- 开通贴现提示 -->
     <div class="content">
-      <div>
-        <h2 class="content_title">开通贴现功能所需材料</h2>
-        <ul>
-          <li>
-            <img src="../../assets/imgs/business1.png" alt="" />
-            <div class="text">
-              <p class="weight">公司营业执照复印件</p>
-              <p>盖公章（扫描件或照片）</p>
-            </div>
-          </li>
-          <li>
-            <img src="../../assets/imgs/business2.png" alt="" />
-            <div class="text">
-              <p class="weight">法定代表人身份证正反面复印件</p>
-              <p>盖公章（扫描件或照片）</p>
-            </div>
-          </li>
-          <li>
-            <img src="../../assets/imgs/business3.png" alt="" />
-            <div class="text">
-              <p class="weight">贴现协议最后一页签署页</p>
-              <p>盖公章（扫描件或照片）</p>
-            </div>
-          </li>
-          <li>
-            <div class="text_pic">pdf</div>
-            <div class="text">
-              <p class="weight">公司上一年度财务报表</p>
-              <p>公司上一年度财务报表</p>
-            </div>
-          </li>
-          <li>
-            <div class="text_pic el-icon-more"></div>
-            <div class="text">
-              <p class="weight">其它准备信息</p>
-              <p>公司股权结构等基本信息</p>
-            </div>
-          </li>
-        </ul>
-      </div>
+      <h2 class="content_title">开通贴现功能所需材料</h2>
+      <ul>
+        <li>
+          <img src="../../assets/imgs/business1.png" alt="" />
+          <div class="text">
+            <p class="weight">公司营业执照复印件</p>
+            <p>盖公章（扫描件或照片）</p>
+          </div>
+        </li>
+        <li>
+          <img src="../../assets/imgs/business2.png" alt="" />
+          <div class="text">
+            <p class="weight">法定代表人身份证正反面复印件</p>
+            <p>盖公章（扫描件或照片）</p>
+          </div>
+        </li>
+        <li>
+          <img src="../../assets/imgs/business3.png" alt="" />
+          <div class="text">
+            <p class="weight">贴现协议最后一页签署页</p>
+            <p>盖公章（扫描件或照片）</p>
+          </div>
+        </li>
+        <li>
+          <div class="text_pic">pdf</div>
+          <div class="text">
+            <p class="weight">公司上一年度财务报表</p>
+            <p>公司上一年度财务报表</p>
+          </div>
+        </li>
+        <li>
+          <div class="text_pic el-icon-more"></div>
+          <div class="text">
+            <p class="weight">其它准备信息</p>
+            <p>公司股权结构等基本信息</p>
+          </div>
+        </li>
+      </ul>
+      <div class="downLoad"><a href="#">点击下载《电子银行承兑汇票急速贴现协议》</a></div>
       <!-- 温馨提示 -->
-      <!-- <div>
+      <!-- <div> -->
         <div class="content_title weight">温馨提示</div>
-        <div>1</div>
-        <div>1</div>
-        <div>1</div>
-        <div>1</div>
-        <div>1</div>
-        <div>1</div>
-        <div>1</div>
-      </div> -->
+        <div class="p20 text_cue">
+          <p ><i class="el-icon-star-on"></i> 一个手机账号最多认证五个企业</p>
+          <p ><i class="el-icon-star-on"></i> 《电子银行承兑汇票急速贴现协议》简称贴现协议</p>
+          <p ><i class="el-icon-star-on"></i> 单笔提交票面不能超过500万</p>
+        </div>
+      <!-- </div> -->
     </div>
   </div>
 </template>
@@ -139,7 +136,7 @@ export default {
   methods: {
     // 跳转到申请页面
     toApply () {
-      this.$router.push('/Apply')
+      this.$router.push('/discount/Apply')
     },
     handleSizeChange (val) {
       // // console.log(`每页 ${val} 条`)
@@ -180,7 +177,7 @@ export default {
   padding-right: 20px;
 }
 .content {
-  .content_title{
+  .content_title {
     font-size: 18px;
     margin-bottom: 5px;
   }
@@ -202,7 +199,7 @@ export default {
         line-height: 150px;
         font-size: 35px;
         color: #47678e;
-        background-color: #C5C4C0;
+        background-color: #c5c4c0;
       }
       img {
         width: 100px;
@@ -211,12 +208,26 @@ export default {
       .text {
         text-align: center;
         padding: 10px;
-        p{
+        p {
           font-size: 18px;
           margin-bottom: 10px;
         }
       }
     }
+  }
+}
+.text_cue{
+  p{
+    font-size: 18px;
+    padding-left: 10px;
+    line-height: 30px;
+  }
+}
+.downLoad{
+  text-align: center;
+  padding: 20px;
+  a{
+    color: #000;
   }
 }
 </style>
